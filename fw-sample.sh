@@ -14,7 +14,7 @@ iptables -t filter -P FORWARD DROP
 iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 
 # Autoriser loopback
-iptables -t filter -A INPUT -i lo -j ACCEPT
+# iptables -t filter -A INPUT -i lo -j ACCEPT
 
 # Autoriser ICMP (Ping)
 iptables -t filter -A INPUT -p icmp -j ACCEPT
@@ -29,4 +29,4 @@ iptables -t filter -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
 
 # Block sample ip
-iptables -I INPUT -s 12.34.56.78 -j DROP
+# iptables -I INPUT -s 12.34.56.78 -j DROP
